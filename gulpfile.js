@@ -42,6 +42,7 @@ gulp.task('templates', function(){
 gulp.task('watch', function() {
   gulp.watch( "www/index.html", ["move-index"]);
   gulp.watch( sass_files, ["styles"]);
+  gulp.watch( "www/js/*", ["javascripts"]);
   gulp.watch( template_files, ["templates"]);
 });
 
@@ -57,4 +58,9 @@ gulp.task('move-index', function(){
   .pipe(gulp.dest(build_dir));
 });
 
-gulp.task('default', ['styles', 'templates', 'move-index',  'watch']);
+gulp.task('javascripts', function(){
+  gulp.src('www/js/*')
+  .pipe(gulp.dest(js_dir));
+});
+
+gulp.task('default', ['styles', 'templates', 'move-index', "javascripts", 'watch']);
