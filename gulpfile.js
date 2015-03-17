@@ -6,6 +6,7 @@ var declare = require('gulp-declare');
 var concat = require('gulp-concat');
 var scsslint = require('gulp-scss-lint');
 var autoprefixer = require('gulp-autoprefixer');
+var mocha = require("gulp-mocha");
 
 var basefile = "./www";
 var sass_files = basefile + "/sass/**/*.{sass,scss}";
@@ -51,6 +52,11 @@ gulp.task('scss-lint', function() {
   .pipe(scsslint({
     'config': '.scss-lint.yml'
   }));
+});
+
+gulp.task('tests', function () {
+  return gulp.src('test/*.js', {read: false})
+  .pipe(mocha({reporter: 'nyan'}));
 });
 
 gulp.task('move-index', function(){
