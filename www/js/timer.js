@@ -1,3 +1,5 @@
+var Backbone = require('../../bower_components/backbone/backbone.js');
+
 Timer = Backbone.Model.extend({
   initialize: function(){
     this.installMetronome();
@@ -15,5 +17,3 @@ Timer = Backbone.Model.extend({
     this.trigger("ticktack");
   }
 });
-
-module.exports = Timer;

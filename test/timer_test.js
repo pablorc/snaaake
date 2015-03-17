@@ -1,10 +1,8 @@
-var assert = require("chai");
-Backbone = require("underscore");
-require("backbone");
-require("../www/js/timer.js");
+var chai = require("chai");
+require("../www/js/timer");
 
 describe("Timer", function(){
   it("should be able to be created", function(){
-    expect(new Timer()).to.be.a('object');
+    chai.expect(new Timer()).to.be.a('object');
   });
 });
