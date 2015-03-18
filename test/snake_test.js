@@ -8,8 +8,6 @@ describe("Snake", function(){
       timer = new Timer();
       chai.expect(new Snake({
         timer: timer
-      }, {
-        parse: true
       })).to.be.a('object');
     });
 
@@ -17,10 +15,8 @@ describe("Snake", function(){
       var timer = new Timer();
       var snake = new Snake({
         timer: timer
-      },{
-        parse: true
       });
-      chai.expect(snake.timer).to.eql(timer);
+      chai.expect(snake.get("timer")).to.eql(timer);
 
     });
 
@@ -28,8 +24,6 @@ describe("Snake", function(){
       var timer = new Timer();
       var snake = new Snake({
         timer: timer
-      },{
-        parse: true
       });
       var spy = sinon.spy(snake, "move_it");
       timer.tick();
