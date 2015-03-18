@@ -19,7 +19,7 @@ describe("Snake", function(){
         board: new Board()
       });
       chai.expect(snake.get("timer")).to.eql(timer);
-});
+    });
 
     it("should move when the timer tells it", function(){
       var timer = new Timer();
@@ -46,7 +46,7 @@ describe("Snake", function(){
       snake.move_it()
       chai.expect(snake.get("coords")).to.be.eql([4,4])
     });
-    
+
     it("should trigger an moved event", function(){
       var board = new Board();
       var snake = new Snake({
