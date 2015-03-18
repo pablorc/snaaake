@@ -1,5 +1,4 @@
-var chai = require("chai");
-var sinon = require("sinon");
+require("./helpers");
 require("../www/js/timer");
 
 describe("Timer", function(){

@@ -12,7 +12,6 @@ Timer = Backbone.Model.extend({
   },
 
   tick: function(){
-    console.log("TICK");
     this.trigger("ticktack");
   }
 });
