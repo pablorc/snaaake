@@ -8,6 +8,7 @@ Snake = Backbone.Model.extend({
 
   initialize: function(attrs){
     this.listenTo(attrs.timer, "ticktack", this.move_it);
+    attrs.board.addSnake(this);
   },
 
   move_it: function(){

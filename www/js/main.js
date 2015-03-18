@@ -1,1 +1,0 @@
-var timer = require("./timer");

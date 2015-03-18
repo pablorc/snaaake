@@ -3,3 +3,14 @@ Backbone = require('../../bower_components/backbone/backbone.js');
 require("./timer");
 require("./snake");
 require("./board");
+
+(function(){
+  var timer = new Timer();
+  var board = new Board();
+  var snake = new Snake({
+    timer: timer,
+    board: board
+  });
+
+  console.log(timer, board, snake);
+})();
