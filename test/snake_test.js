@@ -46,6 +46,18 @@ describe("Snake", function(){
       snake.move_it()
       chai.expect(snake.get("coords")).to.be.eql([4,4])
     });
+    
+    it("should trigger an moved event", function(){
+      var board = new Board();
+      var snake = new Snake({
+        timer: new Timer(),
+        board: board
+      });
+      var spy = sinon.spy(snake, "trigger");
+
+      snake.move_it()
+      chai.expect(spy).to.have.been.called;
+    })
   });
 
 });
