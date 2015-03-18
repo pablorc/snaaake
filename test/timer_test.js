@@ -1,5 +1,4 @@
 require("./helpers");
-require("../www/js/timer");
 
 describe("Timer", function(){
 
