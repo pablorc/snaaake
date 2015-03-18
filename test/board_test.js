@@ -62,7 +62,7 @@ describe("Board", function(){
       });
       var board = new Board();
       var spy = sinon.spy(board, "validateMovement");
-      snake.trigger("moved");
+      snake.trigger("change:coords");
       chai.expect(spy).to.be.called;
     });
   });

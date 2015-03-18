@@ -9,23 +9,19 @@ Board = Backbone.Model.extend({
     switch(direction){
       case "up":
         return [coords[0], coords[1]-1];
-        break;
       case "down":
         return [coords[0], coords[1]+1];
-        break;
       case "left":
         return [coords[0]-1, coords[1]];
-        break;
       case "right":
         return [coords[0], coords[1]+1];
-        break;
       default: 
         return coords;
     }
   },
 
   addSnake: function(snake){
-    this.listenTo(snake, "moved", this.validateMovement);
+    this.listenTo(snake, "change:coords", this.validateMovement);
   },
 
   validateMovement: function(){
