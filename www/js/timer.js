@@ -1,15 +1,14 @@
 var Backbone = require('../../bower_components/backbone/backbone.js');
 
 Timer = Backbone.Model.extend({
-  initialize: function(){
-    this.installMetronome();
-  },
 
-  installMetronome: function(){
+  step: 500,
+
+  start: function(){
     var that = this;
     setInterval(function(){
       that.tick();
-    }, 500);
+    }, this.step);
   },
 
   tick: function(){
