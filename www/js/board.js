@@ -22,6 +22,13 @@ Board = Backbone.Model.extend({
       default: 
         return coords;
     }
+  },
+
+  addSnake: function(snake){
+    this.listenTo(snake, "moved", this.validateMovement);
+  },
+
+  validateMovement: function(){
   }
 
 });

@@ -53,7 +53,18 @@ describe("Board", function(){
         chai.expect(new Board().move([5,5], "right")[1]).to.be.eql(6);
       });
     });
+  });
 
+  describe(".addSnake", function(){
+    it("should start listening to its moved event", function(){
+      var snake = new Snake({
+        timer: new Backbone.Model()
+      });
+      var board = new Board();
+      var spy = sinon.spy(board, "validateMovement");
+      snake.trigger("moved");
+      chai.expect(spy).to.be.called;
+    });
   });
 });
 
