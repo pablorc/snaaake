@@ -14,7 +14,7 @@ BoardView = Backbone.View.extend({
   rows: function(){
     this._rows = this._rows || this.buildRows();
     return this._rows;
-  }
+  },
   
   render: function(){
     this.$el.html(JST["board"]());
