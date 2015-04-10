@@ -1,4 +1,5 @@
 //Dependencies
+$ = require('../../bower_components/jquery/dist/jquery.js');
 _ = require('../../bower_components/underscore/underscore.js');
 Backbone = require('../../bower_components/backbone/backbone.js');
 
@@ -8,6 +9,7 @@ require("./snake");
 require("./board");
 
 //Views
+require("./board_view");
 
 (function(){
   var timer = new Timer();
