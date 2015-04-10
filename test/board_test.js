@@ -57,10 +57,11 @@ describe("Board", function(){
 
   describe(".addSnake", function(){
     it("should start listening to its moved event", function(){
-      var snake = new Snake({
-        timer: new Backbone.Model()
-      });
       var board = new Board();
+      var snake = new Snake({
+        timer: new Backbone.Model(),
+        board: board
+      });
       var spy = sinon.spy(board, "validateMovement");
       snake.trigger("change:coords");
       chai.expect(spy).to.be.called;
