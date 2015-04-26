@@ -6,13 +6,13 @@
   describe('Snake Model', function () {
 
     beforeEach(function () {
-      this.SnakeModel = new ShakeTheSnake.Models.Snake();
+      this.snakeModel = new ShakeTheSnake.Models.Snake();
     });
 
     describe("initialization", function(){
       it("should be able to be created", function(){
         timer = new Timer();
-        chai.expect(new Snake({
+        chai.expect(new ShakeTheSnake.Models.Snake({
           timer: timer,
           board: new Board()
         })).to.be.a('object');
@@ -20,7 +20,7 @@
 
       it("should assign properly the timer", function(){
         var timer = new Timer();
-        var snake = new Snake({
+        var Snake = new ShakeTheSnake.Models.Snake({
           timer: timer,
           board: new Board()
         });
@@ -29,7 +29,7 @@
 
       it("should move when the timer tells it", function(){
         var timer = new Timer();
-        var snake = new Snake({
+        var snake = new ShakeTheSnake.Models.Snake({
           timer: timer,
           board: new Board()
         });
@@ -44,12 +44,12 @@
         var board = new Board();
         var stub = sinon.stub(board, "move")
         stub.withArgs([0,0], "up").returns([4,4]);
-        var snake = new Snake({
+        var snake = new ShakeTheSnake.Models.Snake({
           timer: new Timer(),
           board: board
         });
 
-        snake.move_it()
+        snake.move_it();
         chai.expect(snake.get("coords")).to.be.eql([4,4])
       });
 
