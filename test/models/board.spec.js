@@ -4,13 +4,13 @@
 describe('Board Model', function () {
 
   beforeEach(function () {
-    this.BoardModel = new ShakeTheSnake.Models.Board();
+    this.boardModel = new ShakeTheSnake.Models.Board();
   });
 
 
   describe("initialization", function(){
     it("should have rows", function(){
-      console.log(this, this.boardModel, boardModel);
+      console.log(this, this.boardModel);
       chai.expect(this.boardModel.get("rows")).to.be.greaterThan(0);
     });
 
@@ -64,7 +64,7 @@ describe('Board Model', function () {
   describe(".addSnake", function(){
     it("should start listening to its moved event", function(){
       var board = this.boardModel;
-      var snake = new Snake({
+      var snake = new ShakeTheSnake.Models.Snake({
         timer: new Backbone.Model(),
         board: board
       });
