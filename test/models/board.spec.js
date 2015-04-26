@@ -63,7 +63,7 @@ describe('Board Model', function () {
 
   describe(".addSnake", function(){
     it("should start listening to its moved event", function(){
-      var board = this.boardModel;
+      var board = new ShakeTheSnake.Models.Board();
       var snake = new ShakeTheSnake.Models.Snake({
         timer: new Backbone.Model(),
         board: board
