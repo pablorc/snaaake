@@ -1,9 +1,12 @@
 'use strict';
 
-import sum from './sum';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const f = () => console.log('Yay!');
+import Game from './game';
 
-f();
+ReactDOM.render(
+  <Game />,
+  document.getElementById('root')
+);
 
-console.log(`The answer is ${sum(2,40)}`);
