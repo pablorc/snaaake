@@ -4,7 +4,8 @@
   "description": "A simple snake game",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "server": "webpack-dev-server --progress --colors"
   },
   "repository": {
     "type": "git",
