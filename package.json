@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose",
-    "server": "webpack-dev-server --progress --colors"
+    "server": "webpack-dev-server --progress --colors",
+    "postinstall": "webpack --progress --colors"
   },
   "repository": {
     "type": "git",
