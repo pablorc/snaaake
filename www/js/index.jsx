@@ -8,10 +8,14 @@ import Game from './game';
 import reducer from './reducers/reducers';
 
 const store = createStore(reducer);
+const bounds = {
+  x: 30,
+  y: 30
+};
 
 const render = () => {
   ReactDOM.render(
-      <Game store={store.getState()}/>,
+      <Game store={store.getState()} bounds={bounds}/>,
       document.getElementById('root')
   );
 }
@@ -52,3 +56,19 @@ const foodCollider = () => {
 };
 
 store.subscribe(foodCollider);
+
+const boundsCollider = () => {
+  const state = store.getState();
+  const position = state.snake.position;
+  const head = position[position.length - 1];
+  if (head[0] >= bounds.x ||
+      head[0] < 0 ||
+      head[1] < 0 ||
+      head[1] >= bounds.y) {
+    console.log('GAME OVER')
+  }
+}
+
+store.subscribe(boundsCollider);
+
+
