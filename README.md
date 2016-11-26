@@ -1,4 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/pablorc/full-metal-culebra/badges/gpa.svg)](https://codeclimate.com/github/pablorc/full-metal-culebra)
+
 # Snake? Snaaaaaake!
+
 Just a simple Snake game for your browser
 
 It's not yet complete, but is playable _somehow_.
