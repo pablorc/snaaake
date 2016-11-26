@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "description": "A simple snake game",
   "main": "index.js",
-  engines": {
+  "engines": {
     "node": "5.0.0"
   },
   "scripts": {
