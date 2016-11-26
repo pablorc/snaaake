@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/pablorc/full-metal-culebra/badges/gpa.svg)](https://codeclimate.com/github/pablorc/full-metal-culebra)
+[![Code Climate](https://codeclimate.com/github/pablorc/full-metal-culebra/badges/gpa.svg)](https://codeclimate.com/github/pablorc/full-metal-culebra)  [![Build Status](https://travis-ci.org/pablorc/snaaake.svg?branch=master)](https://travis-ci.org/pablorc/snaaake)
 
 # Snake? Snaaaaaake!
 
