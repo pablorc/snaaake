@@ -18,3 +18,12 @@
 
   background-color: var(--black);
 }
+
+.food {
+  height: 15px;
+  position: absolute;
+  width: 15px;
+
+  background-color: var(--black);
+  transform: rotate(45deg) scale(0.5);
+}

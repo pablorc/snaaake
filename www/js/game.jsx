@@ -3,8 +3,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Snake from './components/snake';
+import Food from './components/food';
 import Maze from './components/maze';
+import Snake from './components/snake';
 
 const Game =  React.createClass({
 
@@ -16,7 +17,11 @@ const Game =  React.createClass({
       maze: {
         width: 30,
         height: 30
-      }
+      },
+      foods: [{
+        x: 7,
+        y: 12
+      }]
     }
   },
 
@@ -25,7 +30,8 @@ const Game =  React.createClass({
       <div className="game">
         <h1>Snaaake</h1>
         <Maze width={this.state.maze.width} height={this.state.maze.height}>
-          <Snake position={this.props.snake.position}/>
+          <Snake position={this.state.snake.position}/>
+          {this.state.foods.map((food) => <Food x={food.x} y={food.y} /> )}
         </Maze>
       </div>
     );
