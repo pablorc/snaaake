@@ -1,9 +1,9 @@
-var path = require('path');
-var webpack = require('webpack');
+//var path = require('path');
+//var webpack = require('webpack');
 
 module.exports = {
-  entry: './www/js/index.js',
-  output: { path: __dirname, filename: 'bundle.js' },
+  entry: './www/js/index.jsx',
+  output: { path: __dirname,  filename: 'bundle.js' },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -15,6 +15,6 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  },
+  }
 };
 
