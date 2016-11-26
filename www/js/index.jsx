@@ -10,9 +10,14 @@ import reducer from './reducers/reducers';
 const store = createStore(reducer);
 store.dispatch({type: ''});
 
-ReactDOM.render(
-  <Game store={store.getState()}/>,
-  document.getElementById('root')
-);
+const render = () => {
+  ReactDOM.render(
+      <Game store={store.getState()}/>,
+      document.getElementById('root')
+  );
+}
 
-setInterval( () => store.dispatch({type: 'MOVE'}), 1000);
+store.subscribe(render);
+render();
+
+setInterval( () => store.dispatch({type: 'MOVE'}), 500);
