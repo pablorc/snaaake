@@ -25,12 +25,12 @@ This is only a playground to get React and Redux working, and because I always w
 
 ## Next steps
 
-- -Basic styles-
-- -Snake movement-
-- -Eat food-
-- -Growing up-
-- -Detect collisions against walls-
-- -Basic scoring-
+- ~~Basic styles~~
+- ~~Snake movement~~
+- ~~Eat food~~
+- ~~Growing up~~
+- ~~Detect collisions against walls~~
+- ~~Basic scoring~~
 - Vim controls
 - Awesome Styles
 - Landing page
