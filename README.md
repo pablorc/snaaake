@@ -23,6 +23,31 @@ This is only a playground to get React and Redux working, and because I always w
 - Arrows
 - WASD
 
+## Next steps
+
+- -Basic styles-
+- -Snake movement-
+- -Eat food-
+- -Growing up-
+- -Detect collisions against walls-
+- -Basic scoring-
+- Awesome Styles
+- Landing page
+- Detect collisions agaisnt the snake itself
+- Better Game Over page
+- Restart option
+- Improvements on where food is created
+- Disallow 180º turns
+
+## Next next steps
+
+- Power ups
+- Multiplayer support
+- Complex mazes
+- Adjust velocity
+- Leaderboards
+- Nibbler mode
+
 ## Contribute
 
 Sure! Just ping me at Twitter ([@pablorc](https://twitter.com/pablorc)) and let's talk. Do you want a colleage to make a bigger game? I'm in!
