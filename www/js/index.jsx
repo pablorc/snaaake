@@ -2,14 +2,17 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
 
 import Game from './game';
+import reducer from './reducers/reducers';
 
-const position = [[1,1], [1,2], [2,2],[3,2]];
-const snake = { position };
+const store = createStore(reducer);
+store.dispatch({type: ''});
 
 ReactDOM.render(
-  <Game snake={snake}/>,
+  <Game store={store.getState()}/>,
   document.getElementById('root')
 );
 
+setInterval( () => store.dispatch({type: 'MOVE'}), 1000);
