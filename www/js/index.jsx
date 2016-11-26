@@ -24,7 +24,7 @@ store.subscribe(render);
 render();
 
 // Timer
-setInterval( () => store.dispatch({type: 'MOVE'}), 500);
+const intervalId = setInterval( () => store.dispatch({type: 'MOVE'}), 500);
 
 // Keyboard control
 window.addEventListener("keydown", event => {
@@ -65,10 +65,9 @@ const boundsCollider = () => {
       head[0] < 0 ||
       head[1] < 0 ||
       head[1] >= bounds.y) {
-    console.log('GAME OVER')
+    console.log('GAME OVER');
+    clearInterval(intervalId);
   }
 }
 
 store.subscribe(boundsCollider);
-
-
