@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A simple snake game",
   "main": "index.js",
+  engines": {
+    "node": "5.0.0"
+  },
   "scripts": {
     "test": "jest --verbose",
     "server": "webpack-dev-server --progress --colors",
