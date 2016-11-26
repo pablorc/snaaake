@@ -24,7 +24,7 @@ store.subscribe(render);
 render();
 
 // Timer
-const intervalId = setInterval( () => store.dispatch({type: 'MOVE'}), 500);
+const intervalId = setInterval( () => store.dispatch({type: 'MOVE'}), 50);
 
 // Keyboard control
 window.addEventListener("keydown", event => {
