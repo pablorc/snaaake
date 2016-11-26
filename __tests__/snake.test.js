@@ -1,4 +1,4 @@
-import { snake } from '../www/js/reducers';
+import { snake } from '../www/js/reducers/snake';
 
 test('Gets initial state', () => {
   expect(snake(undefined, {}))

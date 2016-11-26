@@ -14,10 +14,6 @@ const Game =  React.createClass({
       snake: {
         position: [[1,1], [1,2], [2,2],[3,2]]
       },
-      maze: {
-        width: 30,
-        height: 30
-      },
       foods: [{
         x: 7,
         y: 12
@@ -29,7 +25,7 @@ const Game =  React.createClass({
     return (
       <div className="game">
         <h1>Snaaake</h1>
-        <Maze width={this.state.maze.width} height={this.state.maze.height}>
+        <Maze width={30} height={30}>
           <Snake position={this.state.snake.position}/>
           {this.state.foods.map((food) => <Food x={food.x} y={food.y} /> )}
         </Maze>
