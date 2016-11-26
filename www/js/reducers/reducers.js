@@ -2,11 +2,11 @@
 
 import { combineReducers } from 'redux';
 
+import { food } from './food';
 import { snake } from './snake';
 
-const foods = (state = [],  action) => state;
 
 export default combineReducers({
   snake,
-  foods
+  food
 });
