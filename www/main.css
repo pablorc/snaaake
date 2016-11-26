@@ -1,0 +1,20 @@
+:root {
+  --black: #000;
+}
+
+.maze {
+  position: relative;
+
+  border: 2px solid var(--black);
+}
+
+.snake {
+}
+
+.snake__body {
+  height: 15px;
+  position: absolute;
+  width: 15px;
+
+  background-color: var(--black);
+}
