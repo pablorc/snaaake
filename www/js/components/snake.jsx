@@ -9,7 +9,7 @@ class Snake extends React.Component {
       <div className="snake">
         {this.props.position.map( (part) => {
           const [x, y] = part;
-          return <div className="snake__body"> {x} => {y} </div>
+          return <div className="snake__body" key={part}> [{x}, {y}] </div>
         })}
       </div>
     );
