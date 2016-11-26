@@ -33,8 +33,10 @@ window.addEventListener("keydown", (event) => {
     68: 'right', // s
     83: 'down'   // d
   };
-  store.dispatch({
-    type: 'CHANGE_DIR',
-    direction: movement[event.keyCode]
-  });
+  if( movement[event.keyCode] ) {
+    store.dispatch({
+      type: 'CHANGE_DIR',
+      direction: movement[event.keyCode]
+    });
+  }
 }, true);
