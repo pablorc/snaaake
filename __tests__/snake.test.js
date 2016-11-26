@@ -72,3 +72,19 @@ test('Moves to the next pixel left', () => {
   expect(snake(stateBefore, action)).toEqual(stateAfter);
 });
 
+test('Changes direction', () => {
+  const stateBefore = {
+    position: [[2,2], [1,2]],
+    head: 'left'
+  };
+  const action = {
+    type: 'CHANGE_DIR',
+    direction: 'down'
+  }
+  const stateAfter = {
+    position: [[2,2], [1,2]],
+    head: 'down'
+  }
+
+  expect(snake(stateBefore, action)).toEqual(stateAfter);
+});

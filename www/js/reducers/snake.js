@@ -21,6 +21,11 @@ const snake = (state = snakeInitialState, action) =>  {
         ],
         head: state.head
       };
+    case 'CHANGE_DIR':
+      return {
+        ...state,
+        head: action.direction
+      };
     default:
       return state;
   }
