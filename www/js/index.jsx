@@ -8,7 +8,6 @@ import Game from './game';
 import reducer from './reducers/reducers';
 
 const store = createStore(reducer);
-store.dispatch({type: ''});
 
 const render = () => {
   ReactDOM.render(

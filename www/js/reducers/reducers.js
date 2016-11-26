@@ -1,10 +1,12 @@
+'use strict';
+
+import { combineReducers } from 'redux';
+
 import { snake } from './snake';
 
-const reducer = (state = {}, action) => {
-  return {
-    snake: snake(state.snake, action),
-    foods: []
-  }
-}
+const foods = (state = [],  action) => state;
 
-export default reducer;
+export default combineReducers({
+  snake,
+  foods
+});
