@@ -4,17 +4,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Food extends React.Component {
-  positionPart(part) {
+  positionPart(x, y) {
     const pixelSize = 15;
     return {
-      top: `${part[0] * pixelSize}px`,
-      left: `${part[1] * pixelSize}px`
+      top: `${x * pixelSize}px`,
+      left: `${y * pixelSize}px`
     }
   }
 
   render() {
     return (
-      <div className="food" style={this.positionPart([this.props.x, this.props.y])} />
+      <div className="food" style={this.positionPart(this.props.x, this.props.y)} />
     );
   }
 }

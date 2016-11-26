@@ -19,10 +19,11 @@ const render = () => {
 store.subscribe(render);
 render();
 
-setInterval( () => store.dispatch({type: 'MOVE'}), 500);
+// Timer
+setInterval( () => store.dispatch({type: 'MOVE'}), 1000);
 
-//Keyboard control
-window.addEventListener("keydown", (event) => {
+// Keyboard control
+window.addEventListener("keydown", event => {
   const movement = {
     37: 'left',
     38: 'up',
@@ -40,3 +41,14 @@ window.addEventListener("keydown", (event) => {
     });
   }
 }, true);
+
+//Food collision detector
+const foodCollider = () => {
+  const state = store.getState();
+
+  if (state.snake.position.filter( ([x,y]) => x === state.food.x && y === state.food.y).length === 1) {
+    store.dispatch({ type: 'EAT' });
+  }
+};
+
+store.subscribe(foodCollider);
