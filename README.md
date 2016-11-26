@@ -10,6 +10,19 @@ It's not yet complete, but is playable _somehow_.
 
 This is only a playground to get React and Redux working, and because I always wanted to code a Snake game.
 
+## How to play
+
+1. Clone the code
+1. `npm install`
+1. `npm run server`
+1. Open it at http://localhost:8080/webpack-dev-server/www`
+1. Click inside the browser page to get focus
+
+## Controls
+
+- Arrows
+- WASD
+
 ## Contribute
 
 Sure! Just ping me at Twitter ([@pablorc](https://twitter.com/pablorc)) and let's talk. Do you want a colleage to make a bigger game? I'm in!
