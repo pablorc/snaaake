@@ -31,6 +31,7 @@ This is only a playground to get React and Redux working, and because I always w
 - -Growing up-
 - -Detect collisions against walls-
 - -Basic scoring-
+- Vim controls
 - Awesome Styles
 - Landing page
 - Detect collisions agaisnt the snake itself
@@ -38,6 +39,7 @@ This is only a playground to get React and Redux working, and because I always w
 - Restart option
 - Improvements on where food is created
 - Disallow 180º turns
+- Deploy on Heroku
 
 ## Next next steps
 
@@ -52,6 +54,6 @@ This is only a playground to get React and Redux working, and because I always w
 
 Sure! Just ping me at Twitter ([@pablorc](https://twitter.com/pablorc)) and let's talk. Do you want a colleage to make a bigger game? I'm in!
 
-## And remember
+## And remember...
 
 ![After playing a long time, you shoud rest too](https://patrickjohnmccormick.files.wordpress.com/2013/06/screen-shot-2013-06-14-at-11-21-46-pm.png)
