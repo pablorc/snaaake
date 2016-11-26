@@ -20,7 +20,7 @@ store.subscribe(render);
 render();
 
 // Timer
-setInterval( () => store.dispatch({type: 'MOVE'}), 1000);
+setInterval( () => store.dispatch({type: 'MOVE'}), 500);
 
 // Keyboard control
 window.addEventListener("keydown", event => {

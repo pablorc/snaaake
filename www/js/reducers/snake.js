@@ -20,16 +20,23 @@ const snake = (state = snakeInitialState, action) =>  {
   switch(action.type) {
     case 'MOVE':
       return {
+        ...state,
         position: [
-          ...state.position.slice(1),
-          newPosition(state.position[state.position.length - 1], state.head)
+          ...state.position.slice(state.justEat ? 0 : 1),
+          newPosition(state.position[state.position.length - 1], state.head),
         ],
-        head: state.head
+        head: state.head,
+        justEat: false
       };
     case 'CHANGE_DIR':
       return {
         ...state,
         head: action.direction
+      };
+    case 'EAT':
+      return {
+        ...state,
+        justEat: true
       };
     default:
       return state;
