@@ -4,11 +4,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Snake extends React.Component {
-  positionPart(part) {
+  positionPart(x, y) {
     const pixelSize = 15;
     return {
-      top: `${part[0] * pixelSize}px`,
-      left: `${part[1] * pixelSize}px`
+      top: `${x * pixelSize}px`,
+      left: `${y * pixelSize}px`
     }
   }
 
@@ -16,7 +16,7 @@ class Snake extends React.Component {
     return (
       <div className="snake">
         {this.props.position.map( (part) => {
-          return <div className="snake__body" key={part} style={this.positionPart(part)} />
+          return <div className="snake__body" key={part} style={this.positionPart(...part)} />
         })}
       </div>
     );
