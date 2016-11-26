@@ -10,12 +10,13 @@ const snake = (state = snakeInitialState, action) =>  {
     case 'MOVE':
       const verticalMove = state.head === 'up' || state.head === 'down' ? 1 : 0;
       const horizontalMove = state.head === 'left' || state.head === 'right' ? 1 : 0;
+      const upwards = state.head === 'up' || state.head === 'left' ? -1 : 1;
       return {
         position: [
           ...state.position.slice(1),
           [
-            state.position[state.position.length - 1][0] + verticalMove,
-            state.position[state.position.length - 1][1] + horizontalMove
+            state.position[state.position.length - 1][0] + (upwards * verticalMove),
+            state.position[state.position.length - 1][1] + (upwards * horizontalMove)
           ]
         ],
         head: state.head
