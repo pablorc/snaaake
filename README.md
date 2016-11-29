@@ -39,7 +39,7 @@ This is only a playground to get React and Redux working, and because I always w
 - Better Game Over page
 - Restart option
 - Improvements on where food is created
-- Disallow 180º turns
+- ~~Disallow 180º turns~~
 - Deploy on Heroku
 
 ## Next next steps
