@@ -12,7 +12,7 @@ const Game =  React.createClass({
   render() {
     return (
       <div className="game">
-        <h1 className="game__title">Snaaake</h1>
+        <h1 className="game__title">Snaaake!!</h1>
         <Maze width={30} height={30}>
           <Snake position={this.props.store.snake.position}/>
           <Food x={this.props.store.food.x} y={this.props.store.food.y} />

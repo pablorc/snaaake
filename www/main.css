@@ -18,6 +18,7 @@
 }
 
 .game__title {
+  letter-spacing: 3px;
 }
 
 .game__score {
