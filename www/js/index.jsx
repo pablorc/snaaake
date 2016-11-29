@@ -54,8 +54,9 @@ const gameOver = () => {
 //Food collision detector
 const foodCollider = () => {
   const state = store.getState();
+  const [head, ...body] = state.snake.position;
 
-  if (state.snake.position.filter( ([x,y]) => x === state.food.x && y === state.food.y).length === 1) {
+  if (head[0] === state.food.x && head[1] === state.food.y) {
     store.dispatch({ type: 'EAT' });
   }
 };
