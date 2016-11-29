@@ -5,10 +5,14 @@ const snakeInitialState = {
   head: 'right'
 }
 
+const isInPlain = (direction, plane) => plane.some( (dir) => dir === direction );
+const isHorizontal = (direction) => isInPlain(direction, ['left', 'right']);
+const isVertical = (direction) => isInPlain(direction, ['up', 'down']);
+
 const newPosition = (coords, direction) => {
-  const verticalMove = direction === 'up' || direction === 'down' ? 1 : 0;
-  const horizontalMove = direction === 'left' || direction === 'right' ? 1 : 0;
-  const upwards = direction === 'up' || direction === 'left' ? -1 : 1;
+  const verticalMove = isVertical(direction) ? 1 : 0;
+  const horizontalMove = isHorizontal(direction) ? 1 : 0;
+  const upwards = isInPlain(direction, ['up', 'left']) ? -1 : 1;
 
   return [
     coords[0] + (upwards * verticalMove),
