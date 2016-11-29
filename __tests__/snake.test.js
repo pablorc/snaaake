@@ -80,6 +80,44 @@ test('Moves to the next pixel left', () => {
   expect(snake(stateBefore, action)).toEqual(stateAfter);
 });
 
+test('Does not changes direction when tries to do a vertical 180º', () => {
+  const stateBefore = {
+    position: [[2,2], [1,2]],
+    head: 'down',
+    justEat: false
+  };
+  const action = {
+    type: 'CHANGE_DIR',
+    direction: 'up'
+  }
+  const stateAfter = {
+    position: [[2,2], [1,2]],
+    head: 'down',
+    justEat: false
+  }
+
+  expect(snake(stateBefore, action)).toEqual(stateAfter);
+});
+
+test('Does not changes direction when tries to do a horizontal 180º', () => {
+  const stateBefore = {
+    position: [[2,2], [1,2]],
+    head: 'left',
+    justEat: false
+  };
+  const action = {
+    type: 'CHANGE_DIR',
+    direction: 'right'
+  }
+  const stateAfter = {
+    position: [[2,2], [1,2]],
+    head: 'left',
+    justEat: false
+  }
+
+  expect(snake(stateBefore, action)).toEqual(stateAfter);
+});
+
 test('Changes direction', () => {
   const stateBefore = {
     position: [[2,2], [1,2]],

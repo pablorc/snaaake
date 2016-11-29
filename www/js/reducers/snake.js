@@ -20,6 +20,11 @@ const newPosition = (coords, direction) => {
   ]
 };
 
+const canTurn = (oldDirection, newDirection) => {
+  return !(isHorizontal(oldDirection) && isHorizontal(newDirection)) &&
+         !(isVertical(oldDirection) && isVertical(newDirection));
+}
+
 const snake = (state = snakeInitialState, action) =>  {
   switch(action.type) {
     case 'MOVE':
@@ -35,7 +40,7 @@ const snake = (state = snakeInitialState, action) =>  {
     case 'CHANGE_DIR':
       return {
         ...state,
-        head: action.direction
+        head: canTurn(state.head, action.direction) ? action.direction : state.head
       };
     case 'EAT':
       return {
