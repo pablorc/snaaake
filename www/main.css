@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
 :root {
-  --black: #000;
+  --primary: #417778;
+  --secondary: #121E2E;
+  --background: #EBE7D3;
 }
 
 .game {
@@ -8,16 +12,24 @@
   flex-direction: column;
   margin: 0 auto;
   width: 450px;
+
+  color: var(--secondary);
+  font-family: 'Audiowide', sans-serif;
+}
+
+.game__title {
 }
 
 .game__score {
   align-self: flex-end;
+
+  font-family: 'Audiowide', sans-serif;
 }
 
 .maze {
   position: relative;
 
-  border: 2px solid var(--black);
+  border: 2px solid var(--primary);
 }
 
 .snake {
@@ -28,7 +40,7 @@
   position: absolute;
   width: 15px;
 
-  background-color: var(--black);
+  background-color: var(--primary);
 }
 
 .food {
@@ -36,6 +48,6 @@
   position: absolute;
   width: 15px;
 
-  background-color: var(--black);
+  background-color: var(--primary);
   transform: rotate(45deg) scale(0.5);
 }
