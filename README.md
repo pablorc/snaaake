@@ -22,6 +22,7 @@ This is only a playground to get React and Redux working, and because I always w
 
 - Arrows
 - WASD
+- Vim movement controls (HJKL)
 
 ## Next steps
 
