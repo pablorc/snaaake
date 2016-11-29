@@ -31,10 +31,10 @@ This is only a playground to get React and Redux working, and because I always w
 - ~~Growing up~~
 - ~~Detect collisions against walls~~
 - ~~Basic scoring~~
-- Vim controls
+- ~~Vim controls~~
 - Awesome Styles
 - Landing page
-- Detect collisions agaisnt the snake itself
+- ~~Detect collisions agaisnt the snake itself~~
 - Better Game Over page
 - Restart option
 - Improvements on where food is created
