@@ -46,6 +46,11 @@ window.addEventListener("keydown", event => {
   }
 }, true);
 
+const gameOver = () => {
+    console.log('GAME OVER');
+    clearInterval(intervalId);
+}
+
 //Food collision detector
 const foodCollider = () => {
   const state = store.getState();
@@ -57,6 +62,7 @@ const foodCollider = () => {
 
 store.subscribe(foodCollider);
 
+//Snake crashes with wall detector
 const boundsCollider = () => {
   const state = store.getState();
   const position = state.snake.position;
@@ -65,9 +71,19 @@ const boundsCollider = () => {
       head[0] < 0 ||
       head[1] < 0 ||
       head[1] >= bounds.y) {
-    console.log('GAME OVER');
-    clearInterval(intervalId);
+    gameOver();
   }
 }
 
 store.subscribe(boundsCollider);
+
+//Snake crashes onto itself detector
+const itselfCollider = () => {
+  const state = store.getState();
+  const [head, ...body] = state.snake.position;
+  if (body.some((bodyPart) => bodyPart.toString() === head.toString())) {
+    gameOver();
+  }
+}
+
+store.subscribe(itselfCollider);
