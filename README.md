@@ -33,7 +33,7 @@ This is only a playground to get React and Redux working, and because I always w
 - ~~Detect collisions against walls~~
 - ~~Basic scoring~~
 - ~~Vim controls~~
-- Awesome Styles
+- ~~Better styles~~
 - Landing page
 - ~~Detect collisions agaisnt the snake itself~~
 - Better Game Over page
