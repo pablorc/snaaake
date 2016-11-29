@@ -13,11 +13,11 @@ const Game =  React.createClass({
     return (
       <div className="game">
         <h1>Snaaake</h1>
+        <span className="game__score">{this.props.store.score.score}</span>
         <Maze width={30} height={30}>
           <Snake position={this.props.store.snake.position}/>
           <Food x={this.props.store.food.x} y={this.props.store.food.y} />
         </Maze>
-        <span>{this.props.store.score.score}</span>
       </div>
     );
   }
