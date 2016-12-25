@@ -1,6 +1,6 @@
 'use strict';
 
-export const setupControls = (store) => {
+export const setupRunControls = (store) => {
   window.addEventListener("keydown", event => {
     const movement = {
       37: 'left',
@@ -17,12 +17,21 @@ export const setupControls = (store) => {
       74: 'down',  // j
       75: 'up',    // k
       76: 'right'  // l
+
     };
     if( movement[event.keyCode] ) {
       store.dispatch({
         type: 'CHANGE_DIR',
         direction: movement[event.keyCode]
       });
+    }
+  }, true);
+}
+
+export const setupOptionsControls = (store) => {
+  window.addEventListener("keydown", event => {
+    if( event.keyCode === 82 ){
+      store.dispatch({ type: 'RESTART' });
     }
   }, true);
 }

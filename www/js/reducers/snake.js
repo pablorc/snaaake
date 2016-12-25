@@ -27,6 +27,8 @@ const canTurn = (oldDirection, newDirection) => {
 
 const snake = (state = snakeInitialState, action) =>  {
   switch(action.type) {
+    case 'RESTART':
+      return snakeInitialState;
     case 'MOVE':
       return {
         ...state,

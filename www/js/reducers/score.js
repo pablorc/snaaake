@@ -4,6 +4,8 @@ const initialScore = {
 
 const score = (state = initialScore, action) => {
   switch(action.type) {
+    case 'RESTART':
+      return initialScore;
     case 'EAT':
       return {
         ...state,

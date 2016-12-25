@@ -7,12 +7,13 @@ import { createStore } from 'redux';
 import Game from './game';
 import reducer from './reducers/reducers';
 import { setupColliders } from './colliders';
-import { setupControls } from './controls';
+import { setupRunControls, setupOptionsControls } from './controls';
 
 const store = createStore(reducer);
 
 setupColliders(store);
-setupControls(store);
+setupOptionsControls(store);
+setupRunControls(store);
 
 const render = () => {
   ReactDOM.render(

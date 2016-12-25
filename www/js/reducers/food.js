@@ -9,6 +9,8 @@ const newFruit = () => {
 
 const food = (state = newFruit(), action) =>  {
   switch(action.type) {
+    case 'RESTART':
+      return newFruit();
     case 'EAT':
       return newFruit();
     default:
