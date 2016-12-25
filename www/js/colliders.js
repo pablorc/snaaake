@@ -5,7 +5,7 @@ let store;
 //Food collision detector
 const foodCollider = () => {
   const state = store.getState();
-  const [head, ...body] = state.snake.position;
+  const head = state.snake.position[state.snake.position.length - 1];
 
   if (head[0] === state.food.x && head[1] === state.food.y) {
     store.dispatch({ type: 'EAT' });
