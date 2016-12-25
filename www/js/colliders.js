@@ -2,11 +2,6 @@
 
 let store;
 
-const bounds = {
-  x: 30,
-  y: 30
-};
-
 //Food collision detector
 const foodCollider = () => {
   const state = store.getState();
@@ -22,10 +17,10 @@ const boundsCollider = () => {
   const state = store.getState();
   const position = state.snake.position;
   const head = position[position.length - 1];
-  if (head[0] >= bounds.x ||
+  if (head[0] >= state.options.bounds.width ||
       head[0] < 0 ||
       head[1] < 0 ||
-      head[1] >= bounds.y) {
+      head[1] >= state.options.bounds.height) {
     gameOver();
   }
 }

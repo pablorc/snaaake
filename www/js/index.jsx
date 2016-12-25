@@ -16,7 +16,7 @@ setupControls(store);
 
 const render = () => {
   ReactDOM.render(
-      <Game store={store.getState()} bounds={bounds}/>,
+      <Game store={store.getState()} bounds={store.getState().options.bounds}/>,
       document.getElementById('root')
   );
 }
