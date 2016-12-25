@@ -8,7 +8,7 @@ It's not yet complete, but is playable _somehow_.
 
 ## Why?
 
-This is only a playground to get React and Redux working, and because I always wanted to code a Snake game.
+This is only a playground to get React and Redux working. And I always wanted to code a Snake game!.
 
 ## How to play
 
