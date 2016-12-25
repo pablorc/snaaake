@@ -17,11 +17,11 @@ const boundsCollider = () => {
   const state = store.getState();
   const position = state.snake.position;
   const head = position[position.length - 1];
-  if (head[0] >= state.options.bounds.width ||
+  if (head[0] >= state.options.bounds.height ||
       head[0] < 0 ||
       head[1] < 0 ||
-      head[1] >= state.options.bounds.height) {
-    gameOver();
+      head[1] >= state.options.bounds.width) {
+    //gameOver();
   }
 }
 
