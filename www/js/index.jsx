@@ -6,12 +6,11 @@ import { createStore } from 'redux';
 
 import Game from './game';
 import reducer from './reducers/reducers';
+import { setupColliders } from './colliders';
 
 const store = createStore(reducer);
-const bounds = {
-  x: 30,
-  y: 30
-};
+
+setupColliders(store);
 
 const render = () => {
   ReactDOM.render(
@@ -57,40 +56,3 @@ const gameOver = () => {
     clearInterval(intervalId);
 }
 
-//Food collision detector
-const foodCollider = () => {
-  const state = store.getState();
-  const [head, ...body] = state.snake.position;
-
-  if (head[0] === state.food.x && head[1] === state.food.y) {
-    store.dispatch({ type: 'EAT' });
-  }
-};
-
-store.subscribe(foodCollider);
-
-//Snake crashes with wall detector
-const boundsCollider = () => {
-  const state = store.getState();
-  const position = state.snake.position;
-  const head = position[position.length - 1];
-  if (head[0] >= bounds.x ||
-      head[0] < 0 ||
-      head[1] < 0 ||
-      head[1] >= bounds.y) {
-    gameOver();
-  }
-}
-
-store.subscribe(boundsCollider);
-
-//Snake crashes onto itself detector
-const itselfCollider = () => {
-  const state = store.getState();
-  const [head, ...body] = state.snake.position;
-  if (body.some((bodyPart) => bodyPart.toString() === head.toString())) {
-    gameOver();
-  }
-}
-
-store.subscribe(itselfCollider);
