@@ -23,6 +23,7 @@ This is only a playground to get React and Redux working, and because I always w
 - Arrows
 - WASD
 - Vim movement controls (HJKL)
+- _R_ to restart
 
 ## Next steps
 
@@ -37,7 +38,7 @@ This is only a playground to get React and Redux working, and because I always w
 - Landing page
 - ~~Detect collisions agaisnt the snake itself~~
 - Better Game Over page
-- Restart option
+- ~~Restart option~~
 - Improvements on where food is created
 - ~~Disallow 180º turns~~
 - Deploy on Heroku
