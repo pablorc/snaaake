@@ -17,7 +17,7 @@ const Game =  React.createClass({
           <Snake position={this.props.store.snake.position}/>
           <Food x={this.props.store.food.x} y={this.props.store.food.y} />
         </Maze>
-        <span className="game__score">{this.props.store.score.score}</span>
+        <span className="game__score">{this.props.store.game.score}</span>
       </div>
     );
   }
