@@ -26,11 +26,8 @@ store.subscribe(render);
 render();
 
 // Timer
-const intervalId = setInterval( () => store.dispatch({type: 'MOVE'}), 50);
-
-
-const gameOver = () => {
-    console.log('GAME OVER');
-    clearInterval(intervalId);
-}
-
+const intervalId = setInterval( () => {
+  if( store.getState().game.running ){
+    store.dispatch({type: 'MOVE'});
+  }
+}, 50);
