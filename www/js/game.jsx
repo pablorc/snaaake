@@ -22,13 +22,13 @@ class Game extends React.Component {
     return (
       <div className="game">
         <h1 className="game__title">Snaaake!!</h1>
+        <span className="game__score">{this.props.state.game.score}</span>
         <Maze width={this.props.bounds.width} height={this.props.bounds.height}>
           <div>
             <Snake position={this.props.state.snake.position}/>
           </div>
           <Food x={this.props.state.food.x} y={this.props.state.food.y} />
         </Maze>
-        <span className="game__score">{this.props.state.game.score}</span>
         <button onClick={this.onButtonClick}>Start</button>
       </div>
     );

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
 
 :root {
   --primary: #333;
   --background: #9AC503;
-  --scale-size: 5px;
   --snake-part-size: 15px;
 }
 
@@ -16,20 +16,24 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 450px;
+  width: calc(750px + var(--snake-part-size) * 2);
 
   color: var(--primary);
-  font-family: 'Audiowide', sans-serif;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .game__title {
-  letter-spacing: 3px;
+  font-size: 50px;
+  letter-spacing: 1px;
 }
 
 .game__score {
-  align-self: flex-end;
+  align-self: flex-start;
+  border-bottom: var(--snake-part-size) solid var(--primary);
+  margin-bottom: var(--snake-part-size);
+  width: 100%;
 
-  font-family: 'Audiowide', sans-serif;
+  font-size: 30px;
 }
 
 .maze {
@@ -46,24 +50,6 @@ body {
   background-color: var(--primary);
 }
 
-.snake__body:not(:last-child):before,
-.snake__body:not(:last-child):after {
-  content: ' ';
-  display: block;
-  height: var(--scale-size);
-  width: var(--scale-size);
-
-  background-color: var(--background);
-}
-
-.snake__body:after {
-  margin-left: calc(var(--snake-part-size) - var(--scale-size));
-  margin-top: calc(var(--snake-part-size) - var(--scale-size) * 2);
-}
-
-.snake__body:first-child:after {
-  margin-left: 0;
-}
 .food {
   height: var(--snake-part-size);
   position: absolute;
