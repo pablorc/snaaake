@@ -17,7 +17,7 @@ setupRunControls(store);
 
 const render = () => {
   ReactDOM.render(
-      <Game store={store.getState()} bounds={store.getState().options.bounds}/>,
+      <Game store={store} state={store.getState()} bounds={store.getState().options.bounds}/>,
       document.getElementById('root')
   );
 }
