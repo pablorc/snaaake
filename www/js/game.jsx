@@ -23,7 +23,9 @@ class Game extends React.Component {
       <div className="game">
         <h1 className="game__title">Snaaake!!</h1>
         <Maze width={this.props.bounds.width} height={this.props.bounds.height}>
-          <Snake position={this.props.state.snake.position}/>
+          <div>
+            <Snake position={this.props.state.snake.position}/>
+          </div>
           <Food x={this.props.state.food.x} y={this.props.state.food.y} />
         </Maze>
         <span className="game__score">{this.props.state.game.score}</span>

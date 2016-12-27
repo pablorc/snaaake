@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
 
 :root {
-  --primary: #417778;
-  --secondary: #121E2E;
-  --background: #EBE7D3;
+  --primary: #333;
+  --background: #9AC503;
+  --scale-size: 5px;
+  --snake-part-size: 15px;
+}
+
+body {
+  background-color: var(--background);
 }
 
 .game {
@@ -13,7 +18,7 @@
   margin: 0 auto;
   width: 450px;
 
-  color: var(--secondary);
+  color: var(--primary);
   font-family: 'Audiowide', sans-serif;
 }
 
@@ -30,24 +35,39 @@
 .maze {
   position: relative;
 
-  border: 2px solid var(--primary);
-}
-
-.snake {
+  border: var(--snake-part-size) solid var(--primary);
 }
 
 .snake__body {
-  height: 15px;
+  height: var(--snake-part-size);
   position: absolute;
-  width: 15px;
+  width: var(--snake-part-size);
 
   background-color: var(--primary);
 }
 
+.snake__body:not(:last-child):before,
+.snake__body:not(:last-child):after {
+  content: ' ';
+  display: block;
+  height: var(--scale-size);
+  width: var(--scale-size);
+
+  background-color: var(--background);
+}
+
+.snake__body:after {
+  margin-left: calc(var(--snake-part-size) - var(--scale-size));
+  margin-top: calc(var(--snake-part-size) - var(--scale-size) * 2);
+}
+
+.snake__body:first-child:after {
+  margin-left: 0;
+}
 .food {
-  height: 15px;
+  height: var(--snake-part-size);
   position: absolute;
-  width: 15px;
+  width: var(--snake-part-size);
 
   background-color: var(--primary);
   transform: rotate(45deg) scale(0.5);
