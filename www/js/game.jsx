@@ -11,11 +11,6 @@ class Game extends React.Component {
 
   constructor(props) {
     super(props);
-    this.onButtonClick = this.onButtonClick.bind(this);
-  }
-
-  onButtonClick(event) {
-    this.props.store.dispatch({ type: 'RESTART' });
   }
 
   render() {
@@ -29,7 +24,12 @@ class Game extends React.Component {
           </div>
           <Food x={this.props.state.food.x} y={this.props.state.food.y} />
         </Maze>
-        <button onClick={this.onButtonClick}>Start</button>
+        <section className="game__info">
+        <h2>Controls</h2>
+        <p>
+        Press <strong>R</strong> to play and <strong>arrow keys</strong> or <strong>wasd</strong> to move
+        </p>
+        </section>
       </div>
     );
   }

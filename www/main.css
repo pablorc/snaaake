@@ -36,6 +36,10 @@ body {
   font-size: 30px;
 }
 
+.game__info {
+  width: 100%;
+}
+
 .maze {
   position: relative;
 
