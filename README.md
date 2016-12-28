@@ -54,7 +54,8 @@ This is only a playground to get React and Redux working. And I always wanted to
 
 ## Contribute
 
-Sure! Just ping me at Twitter ([@pablorc](https://twitter.com/pablorc)) and let's talk. Do you want a colleage to make a bigger game? I'm in!
+Sure! Feel free to clone and hack whatever you want. I'm open to PRs, don't be shy!
+Do you want a pal to make a bigger game? I'm in!
 
 ## And remember...
 
