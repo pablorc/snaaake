@@ -1,4 +1,4 @@
-import { score } from '../www/js/reducers/score.js';
+import { game } from '../www/js/reducers/game.js';
 
 test('EAT adds 100 points to score', () => {
   const stateBefore = {
@@ -11,6 +11,6 @@ test('EAT adds 100 points to score', () => {
     score: 300
   }
 
-  expect(score(stateBefore, action)).toEqual(stateAfter);
+  expect(game(stateBefore, action)).toEqual(stateAfter);
 });
 
