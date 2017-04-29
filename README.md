@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/pablorc/full-metal-culebra/badges/gpa.svg)](https://codeclimate.com/github/pablorc/full-metal-culebra) [![Build Status](https://travis-ci.org/pablorc/snaaake.svg?branch=develop)](https://travis-ci.org/pablorc/snaaake) [![Issue Count](https://codeclimate.com/github/pablorc/full-metal-culebra/badges/issue_count.svg)](https://codeclimate.com/github/pablorc/full-metal-culebra)
+[![Code Climate](https://codeclimate.com/github/pablorc/snaaale/badges/gpa.svg)](https://codeclimate.com/github/pablorc/snaaale) [![Build Status](https://travis-ci.org/pablorc/snaaake.svg?branch=develop)](https://travis-ci.org/pablorc/snaaake) [![Issue Count](https://codeclimate.com/github/pablorc/snaaale/badges/issue_count.svg)](https://codeclimate.com/github/pablorc/snaaale)
 
 # Snake? Snaaaaaake!
 
