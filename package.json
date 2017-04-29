@@ -8,8 +8,7 @@
   },
   "scripts": {
     "test": "jest --verbose",
-    "server": "webpack-dev-server --progress --colors",
-    "build": "webpack --config webpack.config.production.js"
+    "server": "webpack-dev-server --progress --colors"
   },
   "repository": {
     "type": "git",
