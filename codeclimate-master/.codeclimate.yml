@@ -1,23 +1,29 @@
 ---
 engines:
-  csslint:
+  bundler-audit:
     enabled: true
   duplication:
     enabled: true
     config:
       languages:
+      - ruby
       - javascript
-  eslint:
-    enabled: true
+      - python
+      - php
   fixme:
     enabled: true
   rubocop:
     enabled: true
 ratings:
   paths:
-  - "**.css"
+  - Gemfile.lock
+  - "**.inc"
   - "**.js"
   - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+  - "**.rb"
 exclude_paths:
-- node_modules/
-- "__tests__/"
+- config/
+- spec/
