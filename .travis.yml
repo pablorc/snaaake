@@ -4,3 +4,7 @@ node_js:
 before_install:
   - npm install
 script: npm test
+
+branches:
+  only:
+    - develop
