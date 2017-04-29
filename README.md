@@ -12,6 +12,10 @@ This is only a playground to get React and Redux working. And I always wanted to
 
 ## How to play
 
+Check it out [here](http://pablorc.github.io/snaaake/).
+
+### From the source
+
 1. Clone the code
 1. `npm install`
 1. `npm run server`
@@ -36,12 +40,10 @@ This is only a playground to get React and Redux working. And I always wanted to
 - ~~Vim controls~~
 - ~~Better styles~~
 - Landing page
-- ~~Detect collisions agaisnt the snake itself~~
+- ~~Detect collisions against the snake itself~~
 - Better Game Over page
 - ~~Restart option~~
-- Improvements on where food is created
-- ~~Disallow 180º turns~~
-- Deploy on Heroku
+- ~~Deploy it!~~
 
 ## Next next steps
 
