@@ -57,7 +57,6 @@ Check it out [here](http://pablorc.github.io/snaaake/).
 ## Contribute
 
 Sure! Feel free to clone and hack whatever you want. I'm open to PRs, don't be shy!
-Do you want a pal to make a bigger game? I'm in!
 
 ## And remember...
 
