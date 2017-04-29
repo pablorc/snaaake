@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/pablorc/snaaale/badges/gpa.svg)](https://codeclimate.com/github/pablorc/snaaale) [![Build Status](https://travis-ci.org/pablorc/snaaake.svg?branch=develop)](https://travis-ci.org/pablorc/snaaake) [![Issue Count](https://codeclimate.com/github/pablorc/snaaale/badges/issue_count.svg)](https://codeclimate.com/github/pablorc/snaaale)
+[![Build Status](https://travis-ci.org/pablorc/snaaake.svg?branch=develop)](https://travis-ci.org/pablorc/snaaake) [![Code Climate](https://codeclimate.com/github/pablorc/snaaake/badges/gpa.svg)](https://codeclimate.com/github/pablorc/snaaake)
 
 # Snake? Snaaaaaake!
 
