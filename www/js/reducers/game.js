@@ -7,6 +7,10 @@ const initialState = (previousState = {}) => {
 }
 
 const addHighScore = (state) => {
+  if (state.score === 0) {
+    return state.highScores;
+  }
+
   const newHighScores = state.highScores.slice(0).concat(state.score);
   return newHighScores.sort((b, a) => parseInt(a) - parseInt(b)).slice(0, 5);
 }

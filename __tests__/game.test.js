@@ -70,4 +70,17 @@ describe('on GAMEOVER action', () => {
     }
       expect(game(stateBefore, action).highScores).toEqual(highScores);
   });
+
+  test('Does not add the score to the high scores if it is 0', () => {
+    const highScores =  [1000, 1000, 1000, 1000, 1000];
+    const stateBefore = {
+      score: 0,
+      running: true,
+      highScores
+    }
+    const action = {
+      type: 'GAMEOVER'
+    }
+      expect(game(stateBefore, action).highScores).toEqual(highScores);
+  });
 });
