@@ -62,3 +62,19 @@ body {
   background-color: var(--primary);
   transform: rotate(45deg) scale(0.5);
 }
+
+.highscores {
+  list-style-type: none;
+}
+
+.highscores__highscore:first-child {
+  font-size: 1.6em;
+}
+
+.highscores__highscore:nth-child(2) {
+  font-size: 1.3em;
+}
+
+.highscores__highscore:nth-child(3) {
+  font-size: 1.1em;
+}

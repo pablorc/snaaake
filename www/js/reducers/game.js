@@ -1,7 +1,9 @@
-const initialState = {
-  score: 0,
-  running: true,
-  highScores: []
+const initialState = (previousState = {}) => {
+  return {
+    score: 0,
+    running: true,
+    highScores: previousState.highScores || [1000, 800, 400]
+  }
 }
 
 const addHighScore = (state) => {
@@ -9,10 +11,10 @@ const addHighScore = (state) => {
   return newHighScores.sort((b, a) => parseInt(a) - parseInt(b)).slice(0, 5);
 }
 
-const game = (state = initialState, action) => {
+const game = (state = initialState(), action) => {
   switch(action.type) {
     case 'RESTART':
-      return initialState;
+      return initialState(state);
     case 'GAMEOVER':
       return {
         ...state,
