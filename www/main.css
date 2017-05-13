@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
+.u-text-align-right {
+  text-align: right;
+}
 
 :root {
   --primary: #333;
@@ -37,7 +40,12 @@ body {
 }
 
 .game__info {
+  display: flex;
   width: 100%;
+}
+
+.game__info__area {
+  flex-grow: 1;
 }
 
 .maze {
@@ -64,7 +72,15 @@ body {
 }
 
 .highscores {
+  padding: 0;
+
   list-style-type: none;
+  text-align: right;
+}
+
+.highscores__highscore{
+  line-height: 1.5em;
+  text-align: right;
 }
 
 .highscores__highscore:first-child {

@@ -25,18 +25,22 @@ class Game extends React.Component {
           <Food x={this.props.state.food.x} y={this.props.state.food.y} />
         </Maze>
         <section className="game__info">
-        <h2>Controls</h2>
-        <p>
-        Press <strong>R</strong> to play and <strong>arrow keys</strong> or <strong>wasd</strong> to move
-        </p>
-        <h2>Highscores</h2>
-        <ul className="highscores">
-        {
-          this.props.state.game.highScores.map(function(highScore) {
-            return <li className="highscores__highscore">{highScore}</li>;
-          })
-        }
-        </ul>
+        <div className="game__info__area">
+          <h2>Controls</h2>
+          <p>
+          Press <strong>R</strong> to play and <strong>arrow keys</strong> or <strong>wasd</strong> to move
+          </p>
+        </div>
+        <div className="game__info__area">
+          <h2 className="u-text-align-right">Highscores</h2>
+          <ul className="highscores">
+          {
+            this.props.state.game.highScores.map(function(highScore) {
+              return <li className="highscores__highscore">{highScore}</li>;
+            })
+          }
+          </ul>
+        </div>
         </section>
       </div>
     );
