@@ -1,6 +1,12 @@
 const initialState = {
   score: 0,
-  running: true
+  running: true,
+  highScores: []
+}
+
+const addHighScore = (state) => {
+  const newHighScores = state.highScores.slice(0).concat(state.score);
+  return newHighScores.sort((b, a) => parseInt(a) - parseInt(b)).slice(0, 5);
 }
 
 const game = (state = initialState, action) => {
@@ -10,7 +16,8 @@ const game = (state = initialState, action) => {
     case 'GAMEOVER':
       return {
         ...state,
-        running: false
+        running: false,
+        highScores: addHighScore(state)
       };
     case 'EAT':
       return {

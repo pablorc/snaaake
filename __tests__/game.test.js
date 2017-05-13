@@ -2,44 +2,72 @@ import { game } from '../www/js/reducers/game.js';
 
 test('EAT adds 100 points to score', () => {
   const stateBefore = {
-    score: 200
+    score: 200,
+    highScores: []
+
   }
   const action = {
     type: 'EAT'
   }
-  const stateAfter = {
-    score: 300
-  }
+  const scoreAfter = 300
 
-  expect(game(stateBefore, action)).toEqual(stateAfter);
+  expect(game(stateBefore, action).score).toEqual(scoreAfter);
 });
 
-test('GAMEOVER finish the game', () => {
-  const stateBefore = {
-    running: true
-  }
-  const action = {
-    type: 'GAMEOVER'
-  }
-  const stateAfter = {
-    running: false
-  }
+describe('on GAMEOVER action', () => {
+  test('The game is finished', () => {
+    const stateBefore = {
+      running: true,
+      highScores: []
+    }
+    const action = {
+      type: 'GAMEOVER'
+    }
+    const runningAfter = false;
 
-  expect(game(stateBefore, action)).toEqual(stateAfter);
-});
+    expect(game(stateBefore, action).running).toEqual(runningAfter);
+  });
 
-test('GAMEOVER does not add score', () => {
-  const stateBefore = {
-    score: 200,
-    running: true
-  }
-  const action = {
-    type: 'GAMEOVER'
-  }
-  const stateAfter = {
-    score: 200,
-    running: false
-  }
+  test('It does not increment the score', () => {
+    const stateBefore = {
+      score: 200,
+      running: true,
+      highScores: []
 
-  expect(game(stateBefore, action)).toEqual(stateAfter);
+    }
+    const action = {
+      type: 'GAMEOVER'
+    }
+
+    const scoreAfter = 200;
+
+    expect(game(stateBefore, action).score).toEqual(scoreAfter);
+  });
+
+  test('Adds the score to the high scores', () => {
+    const stateBefore = {
+      score: 200,
+      running: true,
+      highScores: []
+    }
+    const action = {
+      type: 'GAMEOVER'
+    }
+    const highScoresAfter = [200]
+
+      expect(game(stateBefore, action).highScores).toEqual(highScoresAfter);
+  });
+
+  test('Does not add the score to the high scores if is less than all of them', () => {
+    const highScores =  [1000, 1000, 1000, 1000, 1000];
+    const stateBefore = {
+      score: 200,
+      running: true,
+      highScores
+    }
+    const action = {
+      type: 'GAMEOVER'
+    }
+      expect(game(stateBefore, action).highScores).toEqual(highScores);
+  });
 });
