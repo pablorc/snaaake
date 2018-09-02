@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Food from './components/food';
+import InfoArea from './components/info_area';
 import Maze from './components/maze';
 import Snake from './components/snake';
 
@@ -24,24 +25,8 @@ class Game extends React.Component {
           </div>
           <Food x={this.props.state.food.x} y={this.props.state.food.y} />
         </Maze>
-        <section className="game__info">
-        <div className="game__info__area">
-          <h2>Controls</h2>
-          <p>
-          Press <strong>R</strong> to play and <strong>arrow keys</strong> or <strong>wasd</strong> to move
-          </p>
-        </div>
-        <div className="game__info__area">
-          <h2 className="u-text-align-right">Highscores</h2>
-          <ul className="highscores">
-          {
-            this.props.state.game.highScores.map(function(highScore) {
-              return <li className="highscores__highscore">{highScore}</li>;
-            })
-          }
-          </ul>
-        </div>
-        </section>
+
+        <InfoArea highScores={this.props.state.game.highScores}/>
       </div>
     );
   }

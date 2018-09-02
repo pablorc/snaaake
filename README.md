@@ -19,7 +19,7 @@ Check it out [here](http://pablorc.github.io/snaaake/).
 1. Clone the code
 1. `npm install`
 1. `npm run server`
-1. Open it at http://localhost:8080/webpack-dev-server/www`
+1. Open it at http://localhost:8080/webpack-dev-server/www
 1. Click inside the browser page to get focus
 
 ## Controls
