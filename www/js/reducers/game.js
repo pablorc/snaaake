@@ -1,18 +1,26 @@
 const initialState = (previousState = {}) => {
   return {
-    score: 0,
+    score: 9000,
     running: true,
-    highScores: previousState.highScores || [1000, 800, 400]
+    highScores: previousState.highScores || [['PBL', 1000], ['PBL', 800], ['PBL', 100]],
+    savedHighScore: false,
   }
 }
 
-const addHighScore = (state) => {
+const addHighScore = (state, name) => {
   if (state.score === 0) {
     return state.highScores;
   }
 
-  const newHighScores = state.highScores.slice(0).concat(state.score);
-  return newHighScores.sort((b, a) => parseInt(a) - parseInt(b)).slice(0, 5);
+  name = name == '' ? '???' : name;
+
+  const newScore = [name, state.score];
+
+  const newHighScores = state.highScores.slice(0).concat([newScore]);
+  console.log(newHighScores);
+  const result = newHighScores.sort((b, a) => parseInt(a[1]) - parseInt(b[1])).slice(0, 3);
+  console.log(result)
+  return result;
 }
 
 const game = (state = initialState(), action) => {
@@ -23,8 +31,13 @@ const game = (state = initialState(), action) => {
       return {
         ...state,
         running: false,
-        highScores: addHighScore(state)
       };
+    case 'SAVE_HIGHSCORE':
+      return {
+        ...state,
+        highScores: state.savedHighScore ? state.highScores : addHighScore(state, action.name),
+        savedHighScore: true
+      }
     case 'EAT':
       return {
         ...state,

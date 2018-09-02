@@ -51,36 +51,55 @@ describe('on GAMEOVER action', () => {
       highScores: []
     }
     const action = {
-      type: 'GAMEOVER'
+      type: 'SAVE_HIGHSCORE',
+      name: 'DTC'
     }
-    const highScoresAfter = [200]
+    const highScoresAfter = [['DTC', 200]]
 
       expect(game(stateBefore, action).highScores).toEqual(highScoresAfter);
   });
 
   test('Does not add the score to the high scores if is less than all of them', () => {
-    const highScores =  [1000, 1000, 1000, 1000, 1000];
+    const highScores =  [['DOG', 1000],['POR', 1000],['ARA', 1000]];
     const stateBefore = {
       score: 200,
       running: true,
       highScores
     }
     const action = {
-      type: 'GAMEOVER'
+      type: 'SAVE_HIGHSCORE',
+      name: 'DTC'
     }
-      expect(game(stateBefore, action).highScores).toEqual(highScores);
+    expect(game(stateBefore, action).highScores).toEqual(highScores);
   });
 
   test('Does not add the score to the high scores if it is 0', () => {
-    const highScores =  [1000, 1000, 1000, 1000, 1000];
+    const highScores =  [['DOG', 1000],['POR', 1000],['ARA', 1000]];
     const stateBefore = {
       score: 0,
       running: true,
       highScores
     }
     const action = {
-      type: 'GAMEOVER'
+      type: 'SAVE_HIGHSCORE',
+      name: 'DTC'
     }
-      expect(game(stateBefore, action).highScores).toEqual(highScores);
+    expect(game(stateBefore, action).highScores).toEqual(highScores);
+  });
+
+  test('Does not add the score twice', () => {
+    const highScores =  [['DOG', 1000],['POR', 1000],['ARA', 1000]];
+    const stateBefore = {
+      score: 1000,
+      running: true,
+      highScores
+    }
+    const action = {
+      type: 'SAVE_HIGHSCORE',
+      name: 'DTC'
+    }
+    const highsScoresAfterFirst = game(stateBefore, action).highScores;
+
+    expect(game(stateBefore, action).highScores).toEqual(highsScoresAfterFirst);
   });
 });

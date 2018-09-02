@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Food from './components/food';
+import GameOVerWindow from './components/game_over_window';
 import InfoArea from './components/info_area';
 import Maze from './components/maze';
 import Snake from './components/snake';
@@ -24,7 +25,9 @@ class Game extends React.Component {
             <Snake position={this.props.state.snake.position}/>
           </div>
           <Food x={this.props.state.food.x} y={this.props.state.food.y} />
+          <GameOVerWindow store={this.props.store} gameOver={!this.props.state.game.running} score={this.props.state.game.score} savedHighScore={this.props.state.game.savedHighScore}/>
         </Maze>
+
 
         <InfoArea highScores={this.props.state.game.highScores}/>
       </div>

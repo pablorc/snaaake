@@ -30,7 +30,7 @@ export const setupRunControls = (store) => {
 
 export const setupOptionsControls = (store) => {
   window.addEventListener("keydown", event => {
-    if( event.keyCode === 82 ){
+    if( event.keyCode === 82 && event.target.tagName != 'INPUT'){
       store.dispatch({ type: 'RESTART' });
     }
   }, true);

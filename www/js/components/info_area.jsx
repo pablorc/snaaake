@@ -14,11 +14,11 @@ class InfoArea extends React.Component {
           </p>
         </div>
         <div className="game__info__area">
-          <h2 className="u-text-align-right">Highscores</h2>
+          <h2 className="u-text-align-right">Top Highscores</h2>
           <ul className="highscores">
           {
             this.props.highScores.map(function(highScore) {
-              return <li className="highscores__highscore">{highScore}</li>;
+            return <li key={highScore} className="highscores__highscore">{highScore[1]} ({highScore[0]})</li>;
             })
           }
           </ul>

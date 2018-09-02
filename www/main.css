@@ -4,9 +4,14 @@
   text-align: right;
 }
 
+.u-hidden {
+  display: none;
+}
+
 :root {
   --primary: #333;
-  --background: #9AC503;
+  --background: rgb(154, 197, 3);
+  --background-transparent: rgba(154, 197, 3, 0.7);
   --snake-part-size: 15px;
 }
 
@@ -93,4 +98,47 @@ body {
 
 .highscores__highscore:nth-child(3) {
   font-size: 1.1em;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  padding-bottom: 20px;
+
+  background-color: var(--primary);
+  color: var(--background);
+  text-align: center;
+}
+
+.game-over__input {
+  border: 0 none;
+  font-family: 'Share Tech Mono', monospace;
+  outline: 0;
+  padding: 4px;
+  width: 50px;
+  color: var(--background);
+
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 1em;
+  border: 1px solid var(--background);
+  text-align: center;
+}
+
+.game-over__send {
+  border: 0;
+  display: inline;
+  background: transparent;
+  margin-left: 5px;
+  color: var(--background);
+
+  font-size: 1em;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.game-over__send:after {
+  content: '>>';
 }
