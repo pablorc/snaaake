@@ -100,7 +100,7 @@ body {
   font-size: 1.1em;
 }
 
-.game-over {
+.window {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,7 +113,7 @@ body {
   text-align: center;
 }
 
-.game-over__input {
+.window__input {
   border: 0 none;
   font-family: 'Share Tech Mono', monospace;
   outline: 0;
@@ -128,7 +128,7 @@ body {
   text-align: center;
 }
 
-.game-over__send {
+.window__send {
   border: 0;
   display: inline;
   background: transparent;
@@ -139,6 +139,6 @@ body {
   font-family: 'Share Tech Mono', monospace;
 }
 
-.game-over__send:after {
+.window__send:after {
   content: '>>';
 }
