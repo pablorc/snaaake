@@ -3,7 +3,7 @@ const initialState = (previousState = {}) => {
     score: 0,
     running: false,
     justLanded: true,
-    highScores: previousState.highScores || [['PBL', 1000], ['PBL', 800], ['PBL', 100]],
+    highScores: previousState.highScores || [['PBL', 0]],
     savedHighScore: false,
   }
 }
@@ -22,27 +22,13 @@ const addHighScore = (state, name) => {
   return result;
 }
 
-const saveHighscoreInApi = (value, name) => {
-  const url = 'http://localhost:3000/scores';
-  const data = {
-    score: {
-      // TODO: Refactor with addHighscore
-      value: value,
-      author: name == '' ? '???' : name
-    }
-  };
-
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data), // data can be `string` or {object}!
-    headers:{
-      'Content-Type': 'application/json'
-    }
-  }).then(res => console.log(res));
-}
-
 const game = (state = initialState(), action) => {
   switch(action.type) {
+    case 'SET_GLOBAL_HIGHSCORES':
+      return {
+        ...state,
+        globalHighScores: action.highscores
+      }
     case 'RESTART':
       return {
         ...initialState(state),
@@ -55,8 +41,6 @@ const game = (state = initialState(), action) => {
         running: false,
       };
     case 'SAVE_HIGHSCORE':
-      saveHighscoreInApi(state.score, action.name);
-
       return {
         ...state,
         highScores: state.savedHighScore ? state.highScores : addHighScore(state, action.name),

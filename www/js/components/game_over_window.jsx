@@ -3,10 +3,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { saveHighscoreIntoGlobal } from '../api/score.js';
+
 class GameOverWindow extends React.Component {
 
-  saveHighScore(store, score) {
+  sendHighScore(store, score) {
     const name = document.getElementById('highScoreName').value;
+
+    store.dispatch(saveHighscoreIntoGlobal(name, score));
 
     store.dispatch({ type: 'SAVE_HIGHSCORE', name: name})
   }
@@ -24,7 +28,7 @@ class GameOverWindow extends React.Component {
       <div>
         <p>Enter your name:</p>
         <input type="text" className="window__input" id="highScoreName" placeholder="AAA" maxLength="3" />
-        <button className="window__send" onClick={() => !savedHighScore  && this.saveHighScore(store, score)}>SEND</button>
+        <button className="window__send" onClick={() => !savedHighScore  && this.sendHighScore(store, score)}>SEND</button>
       </div>
     );
   }

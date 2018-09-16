@@ -2,14 +2,19 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
 
 import Game from './game';
 import reducer from './reducers/reducers';
 import { setupColliders } from './colliders';
 import { setupRunControls, setupOptionsControls } from './controls';
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+);
 
 setupColliders(store);
 setupOptionsControls(store);
