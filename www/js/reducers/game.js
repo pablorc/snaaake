@@ -1,6 +1,6 @@
 const initialState = (previousState = {}) => {
   return {
-    score: 9000,
+    score: 0,
     running: true,
     highScores: previousState.highScores || [['PBL', 1000], ['PBL', 800], ['PBL', 100]],
     savedHighScore: false,
@@ -17,9 +17,7 @@ const addHighScore = (state, name) => {
   const newScore = [name, state.score];
 
   const newHighScores = state.highScores.slice(0).concat([newScore]);
-  console.log(newHighScores);
   const result = newHighScores.sort((b, a) => parseInt(a[1]) - parseInt(b[1])).slice(0, 3);
-  console.log(result)
   return result;
 }
 
