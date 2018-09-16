@@ -106,11 +106,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
-  padding-bottom: 20px;
+  padding: 20px 0;
 
   background-color: var(--primary);
   color: var(--background);
   text-align: center;
+}
+
+.window__title {
+  margin-top: 0;
 }
 
 .window__input {

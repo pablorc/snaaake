@@ -1,7 +1,8 @@
 const initialState = (previousState = {}) => {
   return {
     score: 0,
-    running: true,
+    running: false,
+    justLanded: true,
     highScores: previousState.highScores || [['PBL', 1000], ['PBL', 800], ['PBL', 100]],
     savedHighScore: false,
   }
@@ -24,7 +25,11 @@ const addHighScore = (state, name) => {
 const game = (state = initialState(), action) => {
   switch(action.type) {
     case 'RESTART':
-      return initialState(state);
+      return {
+        ...initialState(state),
+        justLanded: false,
+        running: true
+      };
     case 'GAMEOVER':
       return {
         ...state,

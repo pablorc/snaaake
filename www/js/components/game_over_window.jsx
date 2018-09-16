@@ -38,7 +38,7 @@ class GameOverWindow extends React.Component {
 
     return (
       <div className={classes}>
-        <h1>Game Over</h1>
+        <h1 className="window__title">Game Over</h1>
         <h2>Your score is: <span className="window__score">{this.props.score}</span></h2>
         {bottomArea}
 
