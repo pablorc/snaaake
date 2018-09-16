@@ -5,6 +5,7 @@ const initialState = (previousState = {}) => {
     justLanded: true,
     highScores: previousState.highScores || [['PBL', 0]],
     savedHighScore: false,
+    recordable: true
   }
 }
 
@@ -23,6 +24,8 @@ const addHighScore = (state, name) => {
 }
 
 const game = (state = initialState(), action) => {
+  state.recordable = action.type === 'MOVE';
+
   switch(action.type) {
     case 'SET_GLOBAL_HIGHSCORES':
       return {

@@ -11,6 +11,8 @@ import reducer from './reducers/reducers';
 import { setupColliders } from './colliders';
 import { setupRunControls, setupOptionsControls } from './controls';
 
+import { saveSnapshot } from './api/snapshot';
+
 const store = createStore(
   reducer,
   applyMiddleware(thunk)
@@ -29,6 +31,10 @@ const render = () => {
 
 store.subscribe(render);
 render();
+
+
+//store.subscribe(() => saveSnapshot(store.getState()));
+// TODO: Enqueue savings at the server or explore more efficient ways.
 
 // Timer
 const intervalId = setInterval( () => {
