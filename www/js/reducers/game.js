@@ -22,6 +22,25 @@ const addHighScore = (state, name) => {
   return result;
 }
 
+const saveHighscoreInApi = (value, name) => {
+  const url = 'http://localhost:3000/scores';
+  const data = {
+    score: {
+      // TODO: Refactor with addHighscore
+      value: value,
+      author: name == '' ? '???' : name
+    }
+  };
+
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => console.log(res));
+}
+
 const game = (state = initialState(), action) => {
   switch(action.type) {
     case 'RESTART':
@@ -36,6 +55,8 @@ const game = (state = initialState(), action) => {
         running: false,
       };
     case 'SAVE_HIGHSCORE':
+      saveHighscoreInApi(state.score, action.name);
+
       return {
         ...state,
         highScores: state.savedHighScore ? state.highScores : addHighScore(state, action.name),
