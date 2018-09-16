@@ -14,6 +14,31 @@ test('EAT adds 100 points to score', () => {
   expect(game(stateBefore, action).score).toEqual(scoreAfter);
 });
 
+describe('on RESTART action', () => {
+  test('Set justLanded to false', () => {
+    const stateBefore = {
+      justLanded: true,
+    }
+    const action = {
+      type: 'RESTART'
+    }
+    const runningAfter = false;
+
+    expect(game(stateBefore, action).justLanded).toEqual(runningAfter);
+  });
+  test('Set running to true', () => {
+    const stateBefore = {
+      running: false,
+    }
+    const action = {
+      type: 'RESTART'
+    }
+    const runningAfter = true;
+
+    expect(game(stateBefore, action).running).toEqual(runningAfter);
+  });
+});
+
 describe('on GAMEOVER action', () => {
   test('The game is finished', () => {
     const stateBefore = {
