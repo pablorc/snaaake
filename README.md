@@ -60,4 +60,4 @@ Sure! Feel free to clone and hack whatever you want. I'm open to PRs, don't be s
 
 ## And remember...
 
-![After playing for a long time, you shoud get some rest too.](https://patrickjohnmccormick.files.wordpress.com/2013/06/screen-shot-2013-06-14-at-11-21-46-pm.png)
+![After playing for a long time, you shoud get some rest too.](https://pablorc.es/files/snake_rest.jpg)
